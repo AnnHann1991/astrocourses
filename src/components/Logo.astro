@@ -1,0 +1,82 @@
+---
+// src/components/Logo.astro
+---
+<svg xmlns="http://w3.org" viewBox="0 0 500 120" width="100%" height="100%" class="logo">
+    <defs>
+      <!-- Премиальный золотой градиент для эффекта металлического тиснения -->
+      <linearGradient id="gold-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#C5A059" />
+        <stop offset="30%" stop-color="#F3E5AB" />
+        <stop offset="50%" stop-color="#AE8844" />
+        <stop offset="85%" stop-color="#D4AF37" />
+        <stop offset="100%" stop-color="#8A6421" />
+      </linearGradient>
+      
+      <!-- Мягкая тень под эмблемой для глубины -->
+      <filter id="subtle-shadow" x="-10%" y="-10%" width="120%" height="120%">
+        <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.15"/>
+      </filter>
+    </defs>
+  
+    <!-- ГРУППА ЭМБЛЕМЫ (Герб + Книга) -->
+    <g id="emblem" filter="url(#subtle-shadow)">
+      <!-- Внешний классический щит -->
+      <path d="M55,15 C75,15 85,5 85,5 C85,5 95,15 115,15 C115,45 115,70 85,105 C55,70 55,45 55,15 Z" 
+            fill="none" 
+            stroke="url(#gold-gradient)" 
+            stroke-width="3" 
+            stroke-linejoin="round" />
+            
+      <!-- Внутренний тонкий контур щита -->
+      <path d="M60,20 C76,20 85,11 85,11 C85,11 94,20 110,20 C110,46 110,67 85,98 C60,67 60,46 60,20 Z" 
+            fill="none" 
+            stroke="url(#gold-gradient)" 
+            stroke-width="1" 
+            stroke-opacity="0.7" />
+  
+      <!-- Раскрытая книга (Символ знаний) -->
+      <!-- Левая страница -->
+      <path d="M85,62 C78,57 72,57 67,59 L67,41 C72,39 78,39 85,44 Z" 
+            fill="url(#gold-gradient)" />
+      <!-- Правая страница -->
+      <path d="M85,62 C92,57 98,57 103,59 L103,41 C98,39 92,39 85,44 Z" 
+            fill="url(#gold-gradient)" />
+      <!-- Корешок книги -->
+      <line x1="85" y1="44" x2="85" y2="63" stroke="#5c4314" stroke-width="1.5" opacity="0.5" />
+      
+      <!-- Академическая звездочка сверху -->
+      <polygon points="85,23 87,28 92,28 88,31 90,36 85,33 80,36 82,31 78,28 83,28" 
+               fill="url(#gold-gradient)" />
+    </g>
+  
+    <!-- ГРУППА ТЕКСТА -->
+    <g id="text-group">
+      <!-- Главное название: Перспектива (Строгий Serif шрифт с капителью) -->
+      <text x="145" y="60" 
+            font-family="Georgia, 'Times New Roman', serif" 
+            font-size="38" 
+            font-weight="bold" 
+            letter-spacing="2" 
+            fill="url(#gold-gradient)">ПЕРСПЕКТИВА</text>
+  
+      <!-- Подзаголовок: ENGLISH SCHOOL -->
+      <text x="148" y="85" 
+            font-family="'Courier New', Courier, monospace" 
+            font-size="14" 
+            font-weight="600"
+            letter-spacing="7" 
+            fill="#E5D3B3" 
+            opacity="0.9">ENGLISH SCHOOL</text>
+            
+      <!-- Декоративная разделительная линия под текстом -->
+      <line x1="148" y1="95" x2="435" y2="95" stroke="url(#gold-gradient)" stroke-width="1" opacity="0.5" />
+    </g>
+  </svg>
+  
+  <style>
+    .logo {
+        width: 320px;
+        margin-top: 22px;
+        margin-left: -32px;
+    }
+  </style>

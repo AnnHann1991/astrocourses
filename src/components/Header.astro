@@ -1,0 +1,69 @@
+---
+import Logo from './Logo.astro';
+---
+
+
+<header class="header">
+   <div class="header__darken"></div>
+   <div class="container">
+        <nav id="header-nav" class="header-nav">
+            <a href="/" class="logo-wrapper">
+                <Logo />
+              </a>
+            <ul class="header-nav__list">
+                <li class="header-nav__list-item"><a href="#">О нас</a></li>
+                <li class="header-nav__list-item"><a href="#">Расписание</a></li>
+                <li class="header-nav__list-item"><a href="#">Новости</a></li>
+                <li class="header-nav__list-item"><a href="#">Галерея</a></li>
+            </ul> 
+        </nav>
+    </div> 
+</header>
+
+<style>
+    .header {
+        height: 160px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        background-color: burlywood;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(106, 107, 107, 0.8)),
+      url('../assets/dumska_bg.jpg');
+        background-size: cover;
+        background-position: top center;
+        background-repeat: no-repeat;
+    }
+    .header-nav {
+        display: flex;
+        gap: 36px;
+        align-items: center;
+    }
+    .header-nav__list {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+        align-items: center;
+    }
+    .header-nav__list-item {
+        color: rgb(65, 182, 182);
+        position: relative;
+    }
+    .header-nav__list-item::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #D4AF37;
+    }
+    .header-nav__list-item:hover {
+        color: rgb(83, 231, 231);
+        text-decoration: underline;
+    }
+    .header-nav__list-item:focus {
+        color: rgb(83, 231, 231);
+        text-decoration: underline;
+    }
+</style>
