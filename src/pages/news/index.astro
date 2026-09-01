@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Newscard from "../../components/Newscard.astro";
+
+interface MarkdownNews {
+  frontmatter: {
+    title: string;
+    pubDate: string;
+    excerpt: string;
+  };
+  url: string;
+}
+
+const allnewsfiles = import.meta.glob('./*.md', { eager: true });
+const allnews = Object.values(allnewsfiles) as MarkdownNews[];
+console.log(allnews);
+---
+
+<BaseLayout title="Новости">
+    <div class="container">
+        {
+            allnews.map((item, index) => (
+                <Newscard 
+                title={item.frontmatter.title}
+                pubDate={item.frontmatter.pubDate}
+                excerpt={item.frontmatter.excerpt}
+                url={item.url}
+                />
+            ))
+        }
+    </div>
+</BaseLayout>
