@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/BaseLayout.astro'
+layout: '../../layouts/FullnewsLayout.astro'
 title: 'Лекция приглашенного профессора из Оксфорда'
 pubDate: 2026-09-10
 excerpt: 'Обсудим эволюцию классического английского романа и особенности викторианской эпохи.'

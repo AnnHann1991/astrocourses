@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/BaseLayout.astro'
+layout: '../../layouts/FullnewsLayout.astro'
 title: 'Литературный вечер: Поэзия Уильяма Шекспира и Роберта Бернса'
 pubDate: 2026-10-12
 excerpt: 'Приглашаем окунуться в атмосферу классической британской поэзии при свечах.'

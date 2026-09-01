@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/BaseLayout.astro'
+layout: '../../layouts/FullnewsLayout.astro'
 title: 'Открытие нового филиала школы Перспектива!'
 pubDate: 2026-09-02
 excerpt: 'Рады сообщить, что теперь мы стали еще ближе к вам.'

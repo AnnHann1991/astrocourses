@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/BaseLayout.astro'
+layout: '../../layouts/FullnewsLayout.astro'
 title: 'Гордимся нашими выпускниками: рекордный балл IELTS'
 pubDate: 2026-09-15
 excerpt: 'Поздравляем Анну Смирнову с получением редкого и престижного балла 8.5!'

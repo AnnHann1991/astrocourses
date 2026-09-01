@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/BaseLayout.astro'
+layout: '../../layouts/FullnewsLayout.astro'
 title: 'Запуск нового курса «Деловой английский и этикет»'
 pubDate: 2026-10-05
 excerpt: 'Программа для предпринимателей и специалистов, планирующих карьеру в международных компаниях.'

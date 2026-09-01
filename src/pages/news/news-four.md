@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/BaseLayout.astro'
+layout: '../../layouts/FullnewsLayout.astro'
 title: 'Осенний сезон дебатов в Английском разговорном клубе'
 pubDate: 2026-09-22
 excerpt: 'Улучшаем навыки ораторского мастерства и аргументации на английском языке.'
