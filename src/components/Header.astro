@@ -22,17 +22,20 @@ import Logo from './Logo.astro';
 
 <style>
     .header {
+        display: flex;
+        align-items: center;
         height: 160px;
         position: fixed;
         top: 0;
         right: 0;
         left: 0;
         background-color: burlywood;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(106, 107, 107, 0.8)),
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6) 80%, rgba(106, 107, 107, 0.8)),
       url('../assets/dumska_bg.jpg');
         background-size: cover;
         background-position: top center;
         background-repeat: no-repeat;
+        z-index: 100;
     }
     .header-nav {
         display: flex;
@@ -54,16 +57,25 @@ import Logo from './Logo.astro';
         position: absolute;
         bottom: 0;
         left: 0;
-        width: 100%;
+        width: 0%;
         height: 2px;
-        background: #D4AF37;
+        background: rgb(83, 231, 231);
+        transition: all 0.3s;
     }
     .header-nav__list-item:hover {
         color: rgb(83, 231, 231);
-        text-decoration: underline;
+        transition: all 0.3s;
+    }
+    .header-nav__list-item:hover::after {
+        width: 100%;
+        transition: all 0.3s;
     }
     .header-nav__list-item:focus {
         color: rgb(83, 231, 231);
-        text-decoration: underline;
+        transition: all 0.3s;
+    }
+    .header-nav__list-item:focus::after {
+        width: 100%;
+        transition: all 0.3s;
     }
 </style>

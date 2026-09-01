@@ -1,82 +1,86 @@
----
-// src/components/Logo.astro
----
-<svg xmlns="http://w3.org" viewBox="0 0 500 120" width="100%" height="100%" class="logo">
-    <defs>
-      <!-- Премиальный золотой градиент для эффекта металлического тиснения -->
-      <linearGradient id="gold-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#C5A059" />
-        <stop offset="30%" stop-color="#F3E5AB" />
-        <stop offset="50%" stop-color="#AE8844" />
-        <stop offset="85%" stop-color="#D4AF37" />
-        <stop offset="100%" stop-color="#8A6421" />
-      </linearGradient>
-      
-      <!-- Мягкая тень под эмблемой для глубины -->
-      <filter id="subtle-shadow" x="-10%" y="-10%" width="120%" height="120%">
-        <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.15"/>
-      </filter>
-    </defs>
-  
-    <!-- ГРУППА ЭМБЛЕМЫ (Герб + Книга) -->
-    <g id="emblem" filter="url(#subtle-shadow)">
-      <!-- Внешний классический щит -->
-      <path d="M55,15 C75,15 85,5 85,5 C85,5 95,15 115,15 C115,45 115,70 85,105 C55,70 55,45 55,15 Z" 
-            fill="none" 
-            stroke="url(#gold-gradient)" 
-            stroke-width="3" 
-            stroke-linejoin="round" />
-            
-      <!-- Внутренний тонкий контур щита -->
-      <path d="M60,20 C76,20 85,11 85,11 C85,11 94,20 110,20 C110,46 110,67 85,98 C60,67 60,46 60,20 Z" 
-            fill="none" 
-            stroke="url(#gold-gradient)" 
-            stroke-width="1" 
-            stroke-opacity="0.7" />
-  
-      <!-- Раскрытая книга (Символ знаний) -->
-      <!-- Левая страница -->
-      <path d="M85,62 C78,57 72,57 67,59 L67,41 C72,39 78,39 85,44 Z" 
-            fill="url(#gold-gradient)" />
-      <!-- Правая страница -->
-      <path d="M85,62 C92,57 98,57 103,59 L103,41 C98,39 92,39 85,44 Z" 
-            fill="url(#gold-gradient)" />
-      <!-- Корешок книги -->
-      <line x1="85" y1="44" x2="85" y2="63" stroke="#5c4314" stroke-width="1.5" opacity="0.5" />
-      
-      <!-- Академическая звездочка сверху -->
-      <polygon points="85,23 87,28 92,28 88,31 90,36 85,33 80,36 82,31 78,28 83,28" 
-               fill="url(#gold-gradient)" />
+
+<svg xmlns="http://w3.org" viewBox="0 0 520 180" width="100%" height="100%" class="logo">
+  <defs>
+    <!-- Золотой градиент с классами на каждом цвете -->
+    <linearGradient id="gold-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop class="gold-base"    offset="0%"   stop-color="#C5A059" />
+      <stop class="gold-flare"   offset="30%"  stop-color="#F3E5AB" />
+      <stop class="gold-shadow"  offset="50%"  stop-color="#AE8844" />
+      <stop class="gold-highlight" offset="85%" stop-color="#D4AF37" />
+      <stop class="gold-dark"    offset="100%" stop-color="#8A6421" />
+    </linearGradient>
+    
+    <!-- Тень под эмблемой -->
+    <filter id="subtle-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- ГРУППА ЭМБЛЕМЫ -->
+  <g id="emblem" filter="url(#subtle-shadow)">
+    <!-- Увеличенная британская корона -->
+    <g id="british-crown" fill="url(#gold-gradient)">
+      <path d="M55,27 L115,27 C115,31 111,32 85,32 C59,32 55,31 55,27 Z" />
+      <path d="M55,25 L57,11 L67,17 L77,3 L83,9 L85,0 L86,0 L88,9 L94,3 L104,17 L114,11 L116,25 Z" />
+      <path d="M83, -8 L87, -8 L87, -12 L83, -12 Z M85, -15 L85, -5 M81, -10 L89, -10" stroke="url(#gold-gradient)" stroke-width="2" />
+      <circle cx="57" cy="9" r="2" />
+      <circle cx="67" cy="15" r="2" />
+      <circle cx="77" cy="1" r="2" />
+      <circle cx="94" cy="1" r="2" />
+      <circle cx="104" cy="15" r="2" />
+      <circle cx="115" cy="9" r="2" />
     </g>
-  
-    <!-- ГРУППА ТЕКСТА -->
-    <g id="text-group">
-      <!-- Главное название: Перспектива (Строгий Serif шрифт с капителью) -->
-      <text x="145" y="60" 
-            font-family="Georgia, 'Times New Roman', serif" 
-            font-size="38" 
-            font-weight="bold" 
-            letter-spacing="2" 
-            fill="url(#gold-gradient)">ПЕРСПЕКТИВА</text>
-  
-      <!-- Подзаголовок: ENGLISH SCHOOL -->
-      <text x="148" y="85" 
-            font-family="'Courier New', Courier, monospace" 
-            font-size="14" 
-            font-weight="600"
-            letter-spacing="7" 
-            fill="#E5D3B3" 
-            opacity="0.9">ENGLISH SCHOOL</text>
-            
-      <!-- Декоративная разделительная линия под текстом -->
-      <line x1="148" y1="95" x2="435" y2="95" stroke="url(#gold-gradient)" stroke-width="1" opacity="0.5" />
-    </g>
-  </svg>
+
+    <!-- Внешний щит -->
+    <path d="M35,34 L135,34 L135,115 C135,145 110,157 85,166 C60,157 35,145 35,115 Z" 
+          fill="none" 
+          stroke="url(#gold-gradient)" 
+          stroke-width="3" 
+          stroke-linejoin="round" />
+          
+    <!-- Внутренний контур щита -->
+    <path d="M41,40 L129,40 L129,113 C129,139 106,151 85,159 C64,151 41,139 41,113 Z" 
+          fill="none" 
+          stroke="url(#gold-gradient)" 
+          stroke-width="1" 
+          stroke-opacity="0.7" />
+
+    <!-- Раскрытая книга -->
+    <path d="M85,115 C74,103 63,103 55,107 L55,65 C63,61 74,61 85,73 Z" fill="url(#gold-gradient)" />
+    <path d="M85,115 C96,103 107,103 115,107 L115,65 C107,61 96,61 85,73 Z" fill="url(#gold-gradient)" />
+    <line x1="85" y1="73" x2="85" y2="116" stroke="#5c4314" stroke-width="2" opacity="0.5" />
+  </g>
+
+  <!-- ГРУППА ТЕКСТА -->
+  <g id="text-group">
+    <text x="160" y="85" font-family="Georgia, serif" font-size="38" font-weight="bold" letter-spacing="2" fill="url(#gold-gradient)">ПЕРСПЕКТИВА</text>
+    <text class="subtitle-text" x="163" y="110" font-family="'Courier New', monospace" font-size="14" font-weight="600" letter-spacing="7" fill="#E5D3B3">ENGLISH SCHOOL</text>
+    <line x1="163" y1="120" x2="450" y2="120" stroke="url(#gold-gradient)" stroke-width="1" opacity="0.5" />
+  </g>
+</svg>
+
   
   <style>
     .logo {
         width: 320px;
-        margin-top: 22px;
-        margin-left: -32px;
+        margin-top: 28px;
+        margin-left: -22px;
     }
+    /* 1. Плавный переход для всех элементов внутри градиента */
+  .gold-base, .gold-flare, .gold-shadow, .gold-highlight, .gold-dark, .subtitle-text {
+    transition: stop-color 0.4s ease, fill 0.4s ease, opacity 0.4s ease;
+  }
+
+  /* 2. Эффект при наведении на весь логотип: золото начинает "сиять" ярче */
+  .logo:hover .gold-base { stop-color: #E6C687; }      /* Становится светлее */
+  .logo:hover .gold-flare { stop-color: #53e7e7; }     /* Блик уходит в чистый белый */
+  .logo:hover .gold-shadow { stop-color: #C5A059; }    /* Тень смягчается */
+  .logo:hover .gold-highlight { stop-color: #FFF0B3; } /* Подсветка усиливается */
+  .logo:hover .gold-dark { stop-color: #AE8844; }      /* Самый темный угол светлеет */
+
+  /* 3. Текст "ENGLISH SCHOOL" при наведении загорается чистым белым цветом */
+  .logo:hover .subtitle-text {
+    fill: #53e7e7;
+    opacity: 1;
+   }
   </style>

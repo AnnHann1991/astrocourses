@@ -1,8 +1,35 @@
 ---
 import Heading from '../components/Heading.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Articlepar from '../components/Articlepar.astro';
 ---
 
 <BaseLayout>
 	<Heading />
+	<div class="container articlecontainer">
+		<div class="parwrapper"><Articlepar /></div>
+		<div class="parwrapper"><Articlepar /></div>
+		<div class="parwrapper"><Articlepar /></div>
+		<div class="parwrapper"><Articlepar /></div>
+	</div>
 </BaseLayout>
+
+<style>
+	.articlecontainer {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.parwrapper {
+		display: flex;
+		width: 90%;
+	}
+	.parwrapper:nth-child(odd) {
+        margin-left: 0;
+        margin-right: auto;
+    }
+	.parwrapper:nth-child(even) {
+		margin-right: 0;
+		margin-left: auto;
+	}
+</style>
